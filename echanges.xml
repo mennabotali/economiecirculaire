@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<echanges>
+    <!-- Verre, Miroiterie, Vitraux & Mosaïque -->
+    <echange>
+        <id_artisan>1</id_artisan>
+        <objet_requis>Bouteilles en verre coloré vides</objet_requis>
+        <quantite_min>10</quantite_min>
+        <objet_offert>Dessous de verre en fusing</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>2</id_artisan>
+        <objet_requis>Bris de verre plat de fenêtres</objet_requis>
+        <quantite_min>5kg</quantite_min>
+        <objet_offert>Bon de réduction de 10 CHF sur une intervention</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>3</id_artisan>
+        <objet_requis>Anciens vitrages et glaces</objet_requis>
+        <quantite_min>2</quantite_min>
+        <objet_offert>Petit miroir de poche découpé sur mesure</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>4</id_artisan>
+        <objet_requis>Vieux miroirs altérés ou piqués</objet_requis>
+        <quantite_min>1</quantite_min>
+        <objet_offert>Bon d'achat de 5 CHF</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>7</id_artisan>
+        <objet_requis>Grands volumes de vitrages usagés</objet_requis>
+        <quantite_min>10kg</quantite_min>
+        <objet_offert>Kit d'entretien pour vitres</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>9</id_artisan>
+        <objet_requis>Morceaux de verre soufflé ancien</objet_requis>
+        <quantite_min>1kg</quantite_min>
+        <objet_offert>Petite décoration de fenêtre en vitrail</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>10</id_artisan>
+        <objet_requis>Petits morceaux de miroirs brisés ou vaisselle colorée</objet_requis>
+        <quantite_min>2kg</quantite_min>
+        <objet_offert>Petit vide-poche en mosaïque</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>12</id_artisan>
+        <objet_requis>Verre plat (chutes de fenêtres)</objet_requis>
+        <quantite_min>5kg</quantite_min>
+        <objet_offert>Plat décoratif thermofusionné</objet_offert>
+    </echange>
+
+    <!-- Ébénisterie, Lutherie & Upcycling -->
+    <echange>
+        <id_artisan>13</id_artisan>
+        <objet_requis>Chutes de bois précieux (noyer, acajou)</objet_requis>
+        <quantite_min>1kg</quantite_min>
+        <objet_offert>Porte-clés en marqueterie</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>14</id_artisan>
+        <objet_requis>Portes d'anciennes armoires à glace</objet_requis>
+        <quantite_min>1</quantite_min>
+        <objet_offert>Bon de 20 CHF pour une réparation</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>15</id_artisan>
+        <objet_requis>Vieilles planches de bois texturé</objet_requis>
+        <quantite_min>3</quantite_min>
+        <objet_offert>Planche à découper en bois massif recyclé</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>18</id_artisan>
+        <objet_requis>Petites pièces de bois de résonance (épicéa, érable)</objet_requis>
+        <quantite_min>500g</quantite_min>
+        <objet_offert>Médiator en bois précieux et entretien de guitare gratuit</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>21</id_artisan>
+        <objet_requis>Vieilles pièces de placage ou touches en os/ivoire</objet_requis>
+        <quantite_min>1 lot</quantite_min>
+        <objet_offert>Bon de 15 CHF</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>22</id_artisan>
+        <objet_requis>Infimes morceaux de nacre ou bois rare</objet_requis>
+        <quantite_min>100g</quantite_min>
+        <objet_offert>Sous-verre avec motif en marqueterie</objet_offert>
+    </echange>
+
+    <!-- Bijouterie, Luminaires, Céramique & Déco -->
+    <echange>
+        <id_artisan>23</id_artisan>
+        <objet_requis>Débris de métaux organiques (cuivre, laiton, argent)</objet_requis>
+        <quantite_min>100g</quantite_min>
+        <objet_offert>Nettoyage et polissage de bijoux gratuit</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>24</id_artisan>
+        <objet_requis>Assiettes en faïence ébréchées ou cassées</objet_requis>
+        <quantite_min>5</quantite_min>
+        <objet_offert>Tasse en céramique décorée main</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>25</id_artisan>
+        <objet_requis>Chutes de terre crue séchée</objet_requis>
+        <quantite_min>2kg</quantite_min>
+        <objet_offert>Petit bol en grès</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>27</id_artisan>
+        <objet_requis>Globes anciens et grandes bouteilles en verre soufflé</objet_requis>
+        <quantite_min>2</quantite_min>
+        <objet_offert>Petite lampe d'ambiance upcyclée</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>28</id_artisan>
+        <objet_requis>Vieux bijoux en or ou argent cassés (pour la fonte)</objet_requis>
+        <quantite_min>10g</quantite_min>
+        <objet_offert>Bon d'achat de 50 CHF sur une création</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>30</id_artisan>
+        <objet_requis>Verres de protection de cadres cassés, pigments anciens</objet_requis>
+        <quantite_min>1 lot</quantite_min>
+        <objet_offert>Expertise gratuite d'un petit objet d'art</objet_offert>
+    </echange>
+</echanges>

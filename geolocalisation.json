@@ -1,0 +1,60 @@
+{
+  "villes": [
+    {
+      "ville_id": 1,
+      "nom_ville": "Genève",
+      "canton": "GE",
+      "latitude": 46.204391,
+      "longitude": 6.143158
+    },
+    {
+      "ville_id": 2,
+      "nom_ville": "Chavannes-près-Renens",
+      "canton": "VD",
+      "latitude": 46.533333,
+      "longitude": 6.583333
+    },
+    {
+      "ville_id": 3,
+      "nom_ville": "Lausanne",
+      "canton": "VD",
+      "latitude": 46.519653,
+      "longitude": 6.632273
+    },
+    {
+      "ville_id": 4,
+      "nom_ville": "Carouge",
+      "canton": "GE",
+      "latitude": 46.183333,
+      "longitude": 6.133333
+    },
+    {
+      "ville_id": 5,
+      "nom_ville": "Rolle",
+      "canton": "VD",
+      "latitude": 46.433333,
+      "longitude": 6.333333
+    },
+    {
+      "ville_id": 6,
+      "nom_ville": "Etoy",
+      "canton": "VD",
+      "latitude": 46.483333,
+      "longitude": 6.416667
+    },
+    {
+      "ville_id": 7,
+      "nom_ville": "Premier",
+      "canton": "VD",
+      "latitude": 46.700000,
+      "longitude": 6.450000
+    },
+    {
+      "ville_id": 8,
+      "nom_ville": "Château-d'Oex",
+      "canton": "VD",
+      "latitude": 46.466667,
+      "longitude": 7.133333
+    }
+  ]
+}
