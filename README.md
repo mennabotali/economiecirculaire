@@ -1,91 +1,99 @@
-# EconomieCirculaire
+# Economie Circulaire
 
-## Getting started
+# TP1 Mashup — Recyclage et artisanat
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+**Disclaimer : Les données d'échange et les récompenses sont des données de **simulation**. Les noms figurant dans la liste des artisans et/ou les entreprises concernées ne participent pas réellement à ce service.**
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## 1. Objectif
 
-## Add your files
+Ce service local permet à un particulier d'identifier des artisans susceptibles de réutiliser des matériaux, de consulter des récompenses fictives offertes en échange et de rechercher ces propositions par ville. L'application est un **mashup**, car elle combine trois sources distinctes avec des identifiants communs.
 
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+## 2. Sources de données
 
+| Source | Format | Informations utilisées |
+|---|---|---|
+| `artisans.json` | JSON | `id`, `nom`, `specialite`, `ville_id` |
+| `echanges.xml` | XML | `id_artisan`, `objet_requis`, `quantite_min`, `objet_offert` |
+| `geolocalisation.json` | JSON | `ville_id`, `nom_ville`, `canton`, `latitude`, `longitude` |
+
+Le jeu de données comporte **30 artisans**, **20 propositions d'échanges** et **8 villes**. Chaque proposition de `echanges.xml` se relie à un artisan de `artisans.json` par `id_artisan` ↔ `id`. Chaque artisan se relie à une ville de `geolocalisation.json` par `ville_id`. Dix artisans n'ont pas de proposition enregistrée : le programme les conserve dans l'annuaire et affiche le fait qu'aucun échange n'est disponible.
+
+## 3. Utilisation du service
+
+Placer les quatre fichiers suivants dans **le même dossier** :
+
+```text
+projet_mashup/
+├── main.py
+├── artisans.json
+├── echanges.xml
+└── geolocalisation.json
 ```
-cd existing_repo
-git remote add origin https://gitlab.unige.ch/Menna.Mahmoud/economiecirculaire.git
-git branch -M main
-git push -uf origin main
+
+Dans un terminal, depuis le dossier du projet, exécuter :
+
+```bash
+python3 main.py
 ```
 
-## Integrate with your tools
+Le programme affiche un menu interactif. Entrer un chiffre de `1` à `5` pour choisir un scénario, puis `0` pour quitter. Aucune bibliothèque externe n'est nécessaire : le script utilise uniquement la bibliothèque standard Python (`json`, `xml.etree.ElementTree`, `math`, `pathlib`, `re`, `unicodedata`).
 
-* [Set up project integrations](https://gitlab.unige.ch/Menna.Mahmoud/economiecirculaire/-/settings/integrations)
+## 4. Scénarios et sources impliquées
 
-## Collaborate with your team
+### Scénario 1 — Recherche par déchet
 
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+- **Entrée** : nom d'un matériau ou d'un déchet, par exemple `bouteille vide`.
+- **Sources** : `echanges.xml` (matériau accepté, quantité minimale, récompense) + `artisans.json` (identification et nom de l'artisan).
+- **Traitement** : recherche des propositions contenant les mots saisis, puis jointure sur l'identifiant de l'artisan.
+- **Sortie** : liste des artisans correspondants, objets demandés, quantités minimales et récompenses.
+- **Exemple** : `bouteille vide` affiche « Atelier du Verre – Wilma Besson », avec 10 bouteilles en verre coloré vides demandées dans les données fictives.
 
-## Test and Deploy
+### Scénario 2 — Recherche par récompense
 
-Use the built-in continuous integration in GitLab.
+- **Entrée** : récompense souhaitée, par exemple `tasse`.
+- **Sources** : `echanges.xml` (récompenses et conditions) + `artisans.json` (noms des artisans).
+- **Traitement** : filtrage des récompenses et jointure sur `id_artisan` ↔ `id`.
+- **Sortie** : artisan proposant la récompense, objet demandé en échange, quantité minimale.
+- **Exemple** : `tasse` affiche « Danielle Adjoubel » et la proposition fictive associée à cinq assiettes en faïence.
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
+### Scénario 3 — Fiche d'un artisan
 
-***
+- **Entrée** : identifiant numérique (`id`) d'un artisan, par exemple `1`.
+- **Sources** : `artisans.json` (profil) + `geolocalisation.json` (ville et coordonnées) + `echanges.xml` (propositions).
+- **Traitement** : recherche de l'artisan, jointure avec la ville par `ville_id`, puis liste de ses échanges par `id_artisan`.
+- **Sortie** : nom, spécialité, ville, coordonnées GPS du centre-ville et toutes les offres, ou la mention « Aucun échange enregistré ».
 
-# Editing this README
+### Scénario 4 — Recherche par proximité GPS
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+- **Entrée** : latitude et longitude, par exemple `46.204391` puis `6.143158`.
+- **Sources** : `geolocalisation.json` (coordonnées des villes) + `artisans.json` (artisans présents) + `echanges.xml` (artisans avec une proposition active dans les données).
+- **Traitement** : calcul de la distance à vol d'oiseau par la formule de Haversine jusqu'aux centres des huit villes, sélection de la ville la plus proche, puis jointure avec les artisans de cette ville et leurs propositions.
+- **Sortie** : ville la plus proche dans le jeu de données, distance approximative jusqu'à son centre, artisans avec une proposition.
+- **Limite** : la proximité concerne le **centre-ville**, pas l'adresse précise de l'atelier. Elle ne garantit pas l'existence d'un artisan proche des coordonnées saisies.
 
-## Suggestions for a good README
+### Scénario 5 — Catalogue par ville
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+- **Entrée** : nom d'une ville, par exemple `Genève` ou `Geneve`.
+- **Sources** : `geolocalisation.json` (recherche de la ville et de son `ville_id`) + `artisans.json` (artisans de cette ville) + `echanges.xml` (objets acceptés et récompenses).
+- **Traitement** : identification de la ville, jointure avec les artisans puis avec leurs propositions d'échange.
+- **Sortie** : artisans présents, spécialités, propositions et catalogue sans doublons des matériaux acceptés.
 
-## Name
-Choose a self-explaining name for your project.
+## 5. Choix d'implémentation
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+- Lecture des fichiers au démarrage avec `json.load` et `ElementTree.parse`.
+- Recherches de texte non sensibles à la casse et aux accents ; gestion simple de certains pluriels.
+- Contrôle des saisies : menu, identifiants numériques, coordonnées GPS.
+- Utilisation de `Path(__file__)` pour retrouver les sources même quand le programme est lancé depuis un autre répertoire.
+- Aucun service web externe ni base de données ne sont nécessaires : il s'agit d'un service **local**, conformément au périmètre du TP.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## 6. Limites et améliorations envisagées
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+1. Les propositions d'échange et récompenses ont été générées pour illustrer le TP ; elles **ne sont pas vérifiées auprès des artisans** et ne doivent pas être présentées comme des offres réelles.
+2. Les coordonnées disponibles représentent les centres des villes en question. Pour une application réelle, il faudrait disposer des coordonnées des ateliers.
+3. `quantite_min` est du texte (par exemple `10`, `5kg`, `1 lot`). Il serait préférable de séparer la valeur numérique et l'unité avant d'automatiser la vérification d'une quantité apportée.
+4. Certaines entrées (verre cassé, touches en ivoire) demanderaient une révision pour des raisons de sécurité et de conformité avant toute utilisation réelle.
+5. Les recherches utilisent une correspondance simple de mots, non une classification sémantique des matériaux.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## 7. Conclusion
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Le projet répond aux exigences techniques du TP : un programme Python en ligne de commande, trois sources distinctes dont JSON et XML, et cinq scénarios d'utilisation. Il démontre plusieurs jointures entre données hétérogènes et une contextualisation spatiale simple par les villes. Les données restent fictives à ce stade.

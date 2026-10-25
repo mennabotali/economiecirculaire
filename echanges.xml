@@ -26,10 +26,28 @@
         <objet_offert>Bon d'achat de 5 CHF</objet_offert>
     </echange>
     <echange>
+        <id_artisan>5</id_artisan>
+        <objet_requis>Vitres simples intactes de récupération, sans fissures</objet_requis>
+        <quantite_min>2</quantite_min>
+        <objet_offert>Bon de 10 CHF sur une intervention de vitrerie</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>6</id_artisan>
+        <objet_requis>Chutes de miroirs non fissurés, aux bords protégés</objet_requis>
+        <quantite_min>2</quantite_min>
+        <objet_offert>Petit miroir décoratif sur mesure</objet_offert>
+    </echange>
+    <echange>
         <id_artisan>7</id_artisan>
         <objet_requis>Grands volumes de vitrages usagés</objet_requis>
         <quantite_min>10kg</quantite_min>
         <objet_offert>Kit d'entretien pour vitres</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>8</id_artisan>
+        <objet_requis>Petites chutes de métal propre (acier ou aluminium), sans arêtes coupantes</objet_requis>
+        <quantite_min>2kg</quantite_min>
+        <objet_offert>Porte-clés métallique personnalisé</objet_offert>
     </echange>
     <echange>
         <id_artisan>9</id_artisan>
@@ -44,12 +62,17 @@
         <objet_offert>Petit vide-poche en mosaïque</objet_offert>
     </echange>
     <echange>
+        <id_artisan>11</id_artisan>
+        <objet_requis>Chutes de verre compatibles avec le soufflage, propres et identifiées</objet_requis>
+        <quantite_min>1kg</quantite_min>
+        <objet_offert>Petit pendentif en verre soufflé</objet_offert>
+    </echange>
+    <echange>
         <id_artisan>12</id_artisan>
         <objet_requis>Verre plat (chutes de fenêtres)</objet_requis>
         <quantite_min>5kg</quantite_min>
         <objet_offert>Plat décoratif thermofusionné</objet_offert>
     </echange>
-
     <!-- Ébénisterie, Lutherie & Upcycling -->
     <echange>
         <id_artisan>13</id_artisan>
@@ -70,10 +93,34 @@
         <objet_offert>Planche à découper en bois massif recyclé</objet_offert>
     </echange>
     <echange>
+        <id_artisan>16</id_artisan>
+        <objet_requis>Chutes de bois massif non traité (chêne, noyer, hêtre)</objet_requis>
+        <quantite_min>2kg</quantite_min>
+        <objet_offert>Petit objet décoratif en bois réemployé</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>17</id_artisan>
+        <objet_requis>Placages en bois noble récupérables (noyer, acajou)</objet_requis>
+        <quantite_min>1 lot</quantite_min>
+        <objet_offert>Marque-page décoratif en marqueterie</objet_offert>
+    </echange>
+    <echange>
         <id_artisan>18</id_artisan>
         <objet_requis>Petites pièces de bois de résonance (épicéa, érable)</objet_requis>
         <quantite_min>500g</quantite_min>
         <objet_offert>Médiator en bois précieux et entretien de guitare gratuit</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>19</id_artisan>
+        <objet_requis>Chutes de bois de lutherie sec et non traité (épicéa, érable)</objet_requis>
+        <quantite_min>500g</quantite_min>
+        <objet_offert>Bon de 15 CHF pour l'entretien d'un instrument à cordes</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>20</id_artisan>
+        <objet_requis>Chutes de bois de charpente massif, sec et non traité</objet_requis>
+        <quantite_min>10kg</quantite_min>
+        <objet_offert>Petit support pour plantes en bois de réemploi</objet_offert>
     </echange>
     <echange>
         <id_artisan>21</id_artisan>
@@ -87,7 +134,7 @@
         <quantite_min>100g</quantite_min>
         <objet_offert>Sous-verre avec motif en marqueterie</objet_offert>
     </echange>
-
+    
     <!-- Bijouterie, Luminaires, Céramique & Déco -->
     <echange>
         <id_artisan>23</id_artisan>
@@ -108,6 +155,12 @@
         <objet_offert>Petit bol en grès</objet_offert>
     </echange>
     <echange>
+        <id_artisan>26</id_artisan>
+        <objet_requis>Plaques de céramique ou terre cuite non fissurées à peindre</objet_requis>
+        <quantite_min>3</quantite_min>
+        <objet_offert>Petite plaque décorative peinte à la main</objet_offert>
+    </echange>
+    <echange>
         <id_artisan>27</id_artisan>
         <objet_requis>Globes anciens et grandes bouteilles en verre soufflé</objet_requis>
         <quantite_min>2</quantite_min>
@@ -118,6 +171,12 @@
         <objet_requis>Vieux bijoux en or ou argent cassés (pour la fonte)</objet_requis>
         <quantite_min>10g</quantite_min>
         <objet_offert>Bon d'achat de 50 CHF sur une création</objet_offert>
+    </echange>
+    <echange>
+        <id_artisan>29</id_artisan>
+        <objet_requis>Feuilles de papier cartonné propre, non plastifié et non imprimé</objet_requis>
+        <quantite_min>20 feuilles</quantite_min>
+        <objet_offert>Carte postale imprimée en typographie artisanale</objet_offert>
     </echange>
     <echange>
         <id_artisan>30</id_artisan>
