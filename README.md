@@ -4,7 +4,6 @@
 
 **Cours :** Mashup, contextualisation et qualité des services — Université de Genève 2026–2027  
 **Étudiante :** Menna Mahmoud  
-**Date :** 25 octobre 2026
 **Langage utilisé :** Python 3  
 **Type d'application :** Service local en ligne de commande
 
