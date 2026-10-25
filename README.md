@@ -2,10 +2,9 @@
 # TP1 — Mashup JSON/XML
 ## Économie circulaire : mise en relation entre particuliers et artisans
 
-**Cours :** Mashup, contextualisation et qualité des services — Université de Genève  
-**Année académique :** 2026–2027  
-**Étudiant·e :** Menna Mahmoud
-**Date :** 25 octobre 2026  
+**Cours :** Mashup, contextualisation et qualité des services — Université de Genève 2026–2027  
+**Étudiante :** Menna Mahmoud  
+**Date :** 25 octobre 2026
 **Langage utilisé :** Python 3  
 **Type d'application :** Service local en ligne de commande
 
@@ -471,6 +470,6 @@ Ce projet m'a permis de développer un service local en Python consacré à l'é
 
 Les six scénarios montrent différentes manières d'utiliser ces données : rechercher un objet ou une récompense, consulter une fiche complète, effectuer une recherche géographique, explorer le catalogue d'une ville ou obtenir des statistiques sur le réseau. Le projet m'a également permis de mettre en pratique la lecture de fichiers JSON/XML, les jointures par identifiants, les boucles, les dictionnaires et les calculs de distance.
 
-**Une suite intéressante serait de transformer ce service en une véritable application ou en un site web plus agréable à utiliser.** Par exemple, il serait possible de développer une interface avec **Streamlit**, qui permet de créer une application web interactive directement en Python. Les utilisateurs pourraient saisir leurs objets dans un champ de recherche, filtrer les résultats par matériau et par ville, visualiser les artisans sur une carte et consulter les récompenses sous forme de fiches illustrées. Cette évolution rendrait le service plus intuitif que l'interface en ligne de commande.
+Une suite intéressante serait de transformer ce service en une véritable application ou en un site web plus agréable à utiliser. Par exemple, il serait possible de développer une interface avec **Streamlit**, qui permet de créer une application web interactive directement en Python. Les utilisateurs pourraient saisir leurs objets dans un champ de recherche, filtrer les résultats par matériau et par ville, visualiser les artisans sur une carte et consulter les récompenses sous forme de fiches illustrées. Cette évolution rendrait le service plus intuitif que l'interface en ligne de commande.
 
 À plus long terme, en utilisant des informations vérifiées auprès des artisans et une localisation plus précise, ce prototype pourrait devenir un outil concret pour encourager le réemploi et faciliter les échanges locaux entre particuliers et professionnels de l'artisanat.
