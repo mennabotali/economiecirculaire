@@ -465,7 +465,7 @@ Ces limites n'empêchent pas de répondre aux objectifs du TP : le but principal
 
 ## 9. Conclusion et ouverture
 
-Ce projet m'a permis de développer un service local en Python consacré à l'économie circulaire et à la valorisation de matériaux par des artisans. En combinant trois fichiers indépendants — un JSON contenant les artisans, un XML décrivant les échanges et un autre JSON regroupant les villes —, le programme fournit des informations qui ne se trouvent pas réunies dans une seule source.
+Ce projet m'a permis de développer un service local en Python consacré à l'économie circulaire et à la valorisation de matériaux par des artisans. En combinant trois fichiers indépendants, un JSON contenant les artisans, un XML décrivant les échanges et un autre JSON regroupant les villes, le programme fournit des informations qui ne se trouvent pas réunies dans une seule source.
 
 Les six scénarios montrent différentes manières d'utiliser ces données : rechercher un objet ou une récompense, consulter une fiche complète, effectuer une recherche géographique, explorer le catalogue d'une ville ou obtenir des statistiques sur le réseau. Le projet m'a également permis de mettre en pratique la lecture de fichiers JSON/XML, les jointures par identifiants, les boucles, les dictionnaires et les calculs de distance.
 
